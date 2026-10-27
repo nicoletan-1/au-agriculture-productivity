@@ -13,7 +13,7 @@
         {
           "mark": {
             "type": "bar",
-            "color": "#C85A32",
+            "color": "#F4D03F",
             "cornerRadiusEnd": 4,
             "height": {
               "band": 0.72
