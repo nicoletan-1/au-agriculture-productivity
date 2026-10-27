@@ -47,38 +47,26 @@
     },
     {
       "data": {
-        "url": "data/world_110m.json",
-        "format": {
-          "type": "topojson",
-          "feature": "countries"
-        }
+        "url": "data/global_tfp_binned.csv"
       },
-      "transform": [
-        {
-          "lookup": "id",
-          "from": {
-            "data": {
-              "url": "data/usda_oecd_global_tfp.csv"
-            },
-            "key": "id",
-            "fields": [
-              "Country",
-              "TFP_Index_2024",
-              "Annual_TFP_Growth_Pct",
-              "OECD_Producer_Support_Pct"
-            ]
-          }
-        },
-        {
-          "filter": "datum.TFP_Index_2024 != null"
-        }
-      ],
       "mark": {
-        "type": "geoshape",
-        "stroke": "#FFFFFF",
-        "strokeWidth": 0.9
+        "type": "point",
+        "filled": true,
+        "shape": "M0,-1 L0.866,-0.5 L0.866,0.5 L0,1 L-0.866,0.5 L-0.866,-0.5 Z",
+        "size": 75,
+        "stroke": "#FBF8F3",
+        "strokeWidth": 0.8,
+        "opacity": 0.96
       },
       "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
         "color": {
           "field": "TFP_Index_2024",
           "type": "quantitative",
@@ -99,6 +87,11 @@
             "field": "Country",
             "type": "nominal",
             "title": "Country"
+          },
+          {
+            "field": "bin_id",
+            "type": "nominal",
+            "title": "Tessellation Bin ID"
           },
           {
             "field": "TFP_Index_2024",
@@ -125,15 +118,15 @@
       "data": {
         "values": [
           {
-            "Lon": 134,
-            "Lat": -25,
+            "Lon": 118,
+            "Lat": -44,
             "Label": "Australia: 164.2 TFP Index with only 2.4% OECD subsidy"
           }
         ]
       },
       "mark": {
         "type": "text",
-        "dy": 32,
+        "dy": 0,
         "fontSize": 11.5,
         "fontWeight": "bold",
         "fill": "#C85A32"
