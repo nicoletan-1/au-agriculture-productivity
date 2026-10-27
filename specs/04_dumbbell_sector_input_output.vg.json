@@ -44,9 +44,10 @@
           "type": "quantitative",
           "scale": {
             "domain": [
-              50,
-              245
-            ]
+              40,
+              260
+            ],
+            "zero": false
           },
           "title": "Volume Index (1990 Baseline = 100)"
         },
@@ -177,7 +178,7 @@
       "data": {
         "values": [
           {
-            "X": 68,
+            "X": 100,
             "Sector": "Wool Specialist",
             "Note": "\u2190 Vertical dashed line = 1990 Baseline Index (100)"
           }
@@ -186,6 +187,7 @@
       "mark": {
         "type": "text",
         "align": "left",
+        "dx": 5,
         "dy": -22,
         "fontSize": 11,
         "fontStyle": "italic",
